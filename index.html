@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT Systems Administrator Candidates — GIG SYSTEMS</title>
+  <link rel="icon" type="image/png" href="https://static.parastorage.com/client/pfavico.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open%20Sans:wght@300;400;500;600;700;800&family=Arial:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #116dff;
+      --primary-dark: #0e5dd9;
+      --primary-deeper: #0c4cb3;
+      --primary-soft: #116dff26;
+      --primary-light: #116dff14;
+      --accent-light: #5899ff;
+      --dark: #080808;
+      --highlight: #5f6360;
+      --bg-light: #262626;
+      --bg-subtle: #393939;
+      --bg-page: #070707;
+      --bg-card: #1c1c1c;
+      --bg-card-hover: #2b2b2b;
+      --white: #FFFFFF;
+      --text-primary: #ffffff;
+      --text-mid: rgba(255,255,255,0.82);
+      --text-light: rgba(255,255,255,0.65);
+      --text-muted: rgba(255,255,255,0.5);
+      --on-dark: #ffffff;
+      --on-dark-mid: rgba(255,255,255,0.82);
+      --on-dark-light: rgba(255,255,255,0.65);
+      --on-dark-muted: rgba(255,255,255,0.15);
+      --border: rgba(255,255,255,0.14);
+      --border-strong: rgba(255,255,255,0.25);
+      --tag-bg: #116dff33;
+      --tag-color: #5899ff;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.03);
+      --shadow-md: 0 1px 3px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.06);
+      --shadow-lg: 0 1px 3px rgba(0,0,0,0.04), 0 16px 48px rgba(0,0,0,0.08);
+      --radius: 16px;
+      --font-heading: 'Open Sans', sans-serif;
+      --font-body: 'Arial', sans-serif;
+      --font-meta: 'Poppins', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); font-size: 16px; color: var(--text-primary); background: var(--bg-page); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+    /* ── Scroll animations ── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Hero ── */
+    .hero-top-bar { background: linear-gradient(90deg, var(--primary), var(--accent-light)); height: 4px; width: 100%; }
+    .hero { background: linear-gradient(155deg, var(--dark) 0%, var(--primary-deeper) 50%, var(--primary-dark) 100%); color: var(--white); padding: 72px 60px 64px; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -40%; right: -15%; width: 700px; height: 700px; background: radial-gradient(circle, #5f636012 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+    .hero::after { content: ''; position: absolute; bottom: -30%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, #116dff0d 0%, transparent 70%); border-radius: 50%; pointer-events: none; }
+    .hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+    .hero-brand { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+    .hero-brand .logo-img { height: 32px; width: auto; filter: brightness(0) invert(1); }
+    .hero-brand .logo-sep { width: 1px; height: 24px; background: rgba(255,255,255,0.25); }
+    .hero-brand .logo-sub { font-family: var(--font-meta); font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+    .hero-eyebrow { display: inline-block; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 100px; padding: 6px 18px; font-family: var(--font-meta); font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; color: var(--highlight); }
+    .hero h1 { font-family: var(--font-heading); font-size: 50px; font-weight: 400; line-height: 1.15; max-width: 720px; margin-bottom: 16px; letter-spacing: -0.02em; }
+    .hero h1 strong { font-weight: 700; }
+    .hero-sub { font-size: 17px; color: rgba(255,255,255,0.55); max-width: 660px; font-weight: 400; line-height: 1.7; margin-bottom: 44px; }
+    .hero-meta { display: flex; gap: 40px; flex-wrap: wrap; }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .hero-meta-label { font-family: var(--font-meta); font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: #116dffe6; }
+    .hero-meta-value { font-size: 14px; font-weight: 500; color: rgba(255,255,255,0.75); }
+
+    /* ── Editorial / Intro ── */
+    .editorial { max-width: 780px; margin: 0 auto; padding: 80px 40px; }
+    .editorial-label { font-family: var(--font-meta); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); margin-bottom: 20px; }
+    .editorial-text { font-size: 17px; line-height: 1.85; color: var(--text-mid); }
+    .editorial-text p { margin-bottom: 16px; }
+    .editorial-text p:last-child { margin-bottom: 0; }
+    .editorial-divider { width: 48px; height: 3px; background: var(--primary); border-radius: 2px; margin-top: 32px; }
+
+    /* ── Candidates section ── */
+    .candidates-section { background: var(--bg-light); padding: 80px 0; }
+    .candidates-header { text-align: center; padding: 0 24px 48px; }
+    .candidates-header h2 { font-family: var(--font-heading); font-size: 32px; font-weight: 700; color: var(--text-primary); margin-bottom: 8px; }
+    .candidates-header p { font-family: var(--font-meta); font-size: 14px; color: var(--text-light); }
+
+    .batch-switcher { display: flex; justify-content: center; align-items: center; gap: 8px; margin: 0 auto 40px; max-width: 800px; padding: 0 24px; }
+    .batch-switcher[data-count="1"] { display: none; }
+    .batch-btn { display: flex; align-items: center; gap: 8px; padding: 11px 22px; border: 2px solid var(--border); border-radius: 10px; background: var(--bg-card); font-family: var(--font-meta); font-size: 13px; font-weight: 600; color: var(--text-light); cursor: pointer; transition: all 0.2s ease; }
+    .batch-btn:hover { border-color: var(--primary); color: var(--text-primary); }
+    .batch-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .batch-count { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 22px; border-radius: 50%; background: var(--primary); color: white; font-size: 11px; font-weight: 700; }
+    .batch-btn.active .batch-count { background: var(--highlight); color: var(--dark); }
+    .batch-panel.hidden { display: none; }
+
+    .candidates { max-width: 900px; margin: 0 auto; padding: 0 24px 40px; display: flex; flex-direction: column; gap: 24px; }
+
+    /* ── Card design ── */
+    .candidate-card { max-width: 1100px; margin: 0 auto 40px; padding: 0 40px; }
+    .card { background: var(--bg-card); border-radius: 16px; overflow: hidden; border: none; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 16px 48px rgba(0,0,0,0.1); }
+    .card.featured { box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 28px rgba(0,0,0,0.06), 0 0 0 1px #116dff33; }
+    .card-top { background: var(--dark); padding: 36px 44px; display: flex; justify-content: space-between; align-items: flex-start; }
+    .card-identity { display: flex; align-items: center; gap: 20px; }
+    .card-avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--primary); border: none; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 700; color: white; flex-shrink: 0; font-family: var(--font-heading); }
+    .card-avatar.featured-avatar { background: var(--highlight); color: var(--dark); }
+    .card-name { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: white; margin-bottom: 4px; }
+    .card-location { font-size: 14px; color: var(--on-dark-mid); display: flex; align-items: center; gap: 6px; }
+    .card-badges { display: flex; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+    .badge { font-family: var(--font-meta); font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+    .badge-shortlisted { background: #116dff33; color: var(--primary); border: 1px solid #116dff66; }
+    .card-rate { text-align: right; }
+    .card-rate-amount { font-size: 24px; font-weight: 700; color: var(--primary); font-family: var(--font-heading); }
+    .card-rate-period { font-family: var(--font-meta); font-size: 10px; color: var(--on-dark-mid); text-transform: uppercase; letter-spacing: 1px; }
+    .tap-badge { display: inline-flex; align-items: center; gap: 5px; background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 4px 10px; border-radius: 6px; font-family: var(--font-meta); font-size: 11px; font-weight: 700; letter-spacing: 0.04em; }
+
+    .tags-row { padding: 0 44px 16px; display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { display: inline-block; padding: 5px 14px; border-radius: 100px; font-family: var(--font-meta); font-size: 11px; font-weight: 600; }
+    .tag-filled { background: var(--tag-bg); color: var(--tag-color); }
+    .tag-filled:nth-child(3) { background: var(--highlight); color: var(--dark); }
+    .tag-outlined { background: var(--bg-subtle); color: var(--text-mid); border: 1.5px solid var(--border-strong); }
+
+    .card-body { padding: 40px 44px; color: var(--text-mid); }
+    .card-section { margin-bottom: 0; }
+    .card-section-title { font-family: var(--font-meta); font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--primary); margin-bottom: 16px; margin-top: 32px; }
+    .card-section-title:first-of-type { margin-top: 0; }
+    .card-narrative { font-size: 16px; line-height: 1.85; color: var(--text-mid); margin-bottom: 32px; font-style: italic; border-left: 3px solid var(--primary); padding-left: 20px; }
+    .card-narrative strong { color: var(--text-primary); font-weight: 600; font-style: normal; }
+    .experience-list { display: flex; flex-direction: column; gap: 20px; }
+    .exp-item { display: flex; gap: 16px; align-items: flex-start; }
+    .exp-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 6px; }
+    .exp-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--primary); flex-shrink: 0; }
+    .exp-line { width: 1px; flex: 1; background: #116dff33; margin-top: 6px; min-height: 30px; }
+    .exp-content { flex: 1; padding-bottom: 4px; }
+    .exp-role { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+    .exp-company { font-size: 13px; color: var(--text-light); margin-top: 2px; }
+    .exp-highlight { font-size: 13px; color: var(--primary); margin-top: 4px; }
+    .tags-cluster { display: flex; flex-wrap: wrap; gap: 8px; }
+    .ctag { font-family: var(--font-meta); font-size: 11px; padding: 6px 14px; border-radius: 6px; background: var(--bg-subtle); color: var(--text-mid); }
+    .ctag-key { background: #116dff1a; color: var(--primary); font-weight: 600; }
+    .fit-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .fit-item { background: var(--bg-subtle); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-strong); overflow: visible; word-wrap: break-word; }
+    .fit-label { font-size: 12px; color: var(--text-mid); line-height: 1.5; display: block; overflow: visible; white-space: normal; }
+    .strength-bars { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; }
+    .bar-item { display: flex; flex-direction: column; gap: 6px; }
+    .bar-label { font-family: var(--font-meta); font-size: 12px; color: var(--text-mid); }
+    .bar-track { height: 5px; background: var(--bg-subtle); border-radius: 3px; overflow: hidden; }
+    .bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary-dark), var(--primary)); border-radius: 3px; transition: width 1.5s ease; }
+    .card-actions { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 14px; }
+    .video-intro-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; background: transparent; border: 1.5px solid var(--primary); border-radius: 6px; color: var(--primary); font-family: var(--font-meta); font-size: 13px; font-weight: 600; letter-spacing: 0.3px; text-decoration: none; transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease; }
+    .video-intro-btn:hover { background: var(--primary); color: #fff; transform: translateY(-1px); }
+
+    .experience-item { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--border); }
+    .exp-dates { font-size: 12px; color: var(--text-light); white-space: nowrap; }
+
+    .strength-list { padding-left: 18px; }
+    .strength-list li { font-size: 14px; color: var(--text-mid); margin-bottom: 8px; line-height: 1.6; }
+
+    .card-footer { display: flex; align-items: center; justify-content: space-between; padding: 16px 44px; background: var(--bg-subtle); border-top: 1px solid var(--border); }
+    .footer-note { font-size: 13px; color: var(--text-light); }
+    .footer-note strong { color: var(--text-primary); }
+    .btn-group { display: flex; gap: 8px; }
+    .btn-card { display: inline-flex; align-items: center; gap: 6px; padding: 9px 18px; border-radius: 8px; font-family: var(--font-meta); font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.15s; cursor: pointer; }
+    .btn-outline { background: var(--bg-card); color: var(--primary); border: 1.5px solid var(--primary); }
+    .btn-outline:hover { background: var(--tag-bg); }
+    .btn-primary-card { background: var(--primary); color: white; border: 1.5px solid var(--primary); }
+    .btn-primary-card:hover { background: var(--primary-dark); }
+    .btn-card svg { width: 15px; height: 15px; }
+    .btn-tap { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; }
+
+    .card-recruiter-note { margin: 0; padding: 20px 24px; background: linear-gradient(135deg, #116dff0d, #116dff05); border-left: 3px solid var(--primary); border-radius: 0 10px 10px 0; }
+    .card-recruiter-note .recruiter-note-title { font-family: var(--font-meta); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); margin-bottom: 8px; }
+    .card-recruiter-note p { font-size: 14px; color: var(--text-mid); line-height: 1.7; }
+
+    /* ── Comparison table ── */
+    .comparison-section { max-width: 1100px; margin: 20px auto 40px; padding: 0 40px; }
+    .comparison-table-wrap { overflow-x: auto; border-radius: var(--radius); box-shadow: var(--shadow-md); }
+    .comparison-table { width: 100%; border-collapse: collapse; background: var(--bg-card); font-size: 13px; color: var(--text-mid); border-radius: 12px; overflow: hidden; }
+    .comparison-table thead th { background: var(--dark); color: var(--primary); padding: 14px 16px; text-align: left; font-family: var(--font-meta); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
+    .comparison-table thead th:first-child { border-radius: 14px 0 0 0; }
+    .comparison-table thead th:last-child { border-radius: 0 14px 0 0; }
+    .comparison-table tbody td { padding: 12px 16px; border-bottom: 1px solid var(--border); }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody tr:hover { background: var(--bg-card-hover); }
+    .comparison-table .highlight-cell { background: #116dff1a; font-weight: 600; color: var(--primary); }
+
+    /* ── Advisor ── */
+    .advisor-section { max-width: 780px; margin: 0 auto; padding: 80px 40px 40px; }
+    .advisor-section-label { font-family: var(--font-meta); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); margin-bottom: 20px; text-align: center; }
+    .advisor-card { display: flex; gap: 28px; background: var(--bg-card); border-radius: 16px; padding: 36px; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+    .advisor-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); flex-shrink: 0; }
+    .advisor-info { flex: 1; }
+    .advisor-label { font-family: var(--font-meta); font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--primary); margin-bottom: 4px; }
+    .advisor-name { font-family: var(--font-heading); font-size: 22px; font-weight: 700; color: var(--text-primary); }
+    .advisor-role { font-family: var(--font-meta); font-size: 13px; color: var(--text-light); margin-bottom: 12px; }
+    .advisor-summary { font-size: 14px; color: var(--text-mid); line-height: 1.75; }
+
+    /* ── Sagan info block ── */
+    .sagan-info { max-width: 780px; margin: 0 auto; padding: 0 40px 60px; }
+    .sagan-info-inner { display: flex; gap: 32px; justify-content: center; padding: 32px 0; border-top: 1px solid var(--border); }
+    .sagan-stat { text-align: center; }
+    .sagan-stat-number { font-family: var(--font-heading); font-size: 28px; font-weight: 700; color: var(--primary); }
+    .sagan-stat-label { font-family: var(--font-meta); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); margin-top: 4px; }
+
+    /* ── Footer CTA ── */
+    .footer-cta { background: var(--dark); padding: 72px 40px; text-align: center; }
+    .footer-cta h2 { font-family: var(--font-heading); font-size: 32px; font-weight: 400; color: white; margin-bottom: 12px; }
+    .footer-cta h2 strong { font-weight: 700; }
+    .footer-cta p { font-size: 16px; color: rgba(255,255,255,0.5); margin-bottom: 32px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .footer-contact { display: inline-block; padding: 14px 36px; background: var(--primary); color: white; border-radius: 8px; font-family: var(--font-meta); font-size: 14px; font-weight: 600; text-decoration: none; letter-spacing: 0.3px; transition: background 0.2s ease, transform 0.15s ease; }
+    .footer-contact:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    /* ── Footer ── */
+    .site-footer { text-align: center; padding: 32px; color: rgba(255,255,255,0.4); font-family: var(--font-meta); font-size: 12px; background: var(--dark); border-top: 1px solid rgba(255,255,255,0.08); }
+    .footer-logos { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 12px; }
+    .footer-logos img { height: 22px; opacity: 0.5; }
+    .footer-x { font-size: 16px; color: rgba(255,255,255,0.2); }
+    .site-footer a { color: var(--primary); text-decoration: none; }
+
+    @media (max-width: 768px) {
+      .hero { padding: 48px 24px 48px; }
+      .hero h1 { font-size: 32px; }
+      .hero-meta { gap: 24px; }
+      .card-top { flex-direction: column; padding: 24px; gap: 16px; }
+      .card-body { padding: 24px; }
+      .candidate-card { padding: 0 16px; }
+      .editorial { padding: 48px 24px; }
+      .fit-grid { grid-template-columns: 1fr; }
+      .strength-bars { grid-template-columns: 1fr; }
+      .advisor-card { flex-direction: column; text-align: center; }
+      .comparison-table { font-size: 11px; }
+      .sagan-info-inner { flex-direction: column; gap: 20px; }
+      .footer-cta { padding: 48px 24px; }
+      .footer-cta h2 { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero-top-bar"></div>
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-brand">
+        <img class="logo-img" src="https://static.parastorage.com/client/pfavico.ico" alt="GIG SYSTEMS" />
+        <div class="logo-sep"></div>
+        <span class="logo-sub">Talent Selection</span>
+      </div>
+      <div class="hero-eyebrow">Sagan Talent Search</div>
+      <h1><strong>IT Systems Administrator</strong> Candidates for GIG SYSTEMS</h1>
+      <p class="hero-sub">Curated talent, vetted and matched to your specific needs. Each profile below has been carefully evaluated for role alignment, skills, and cultural fit.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Candidates</span>
+          <span class="hero-meta-value">3 profiles</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Batch</span>
+          <span class="hero-meta-value">1 &middot; June 24, 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Advisor</span>
+          <span class="hero-meta-value">Amimo Chaka</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="editorial fade-in">
+    <div class="editorial-label">Our Selection Rationale</div>
+    <div class="editorial-text">
+      <p>Hello Tony,</p><p></p><p>I’ve handpicked three fantastic IT Systems Administrator candidates who bring deep, hands-on experience running Microsoft 365, Active Directory, and complex network troubleshooting.</p><p></p><p>They really stood out because of their extensive backgrounds in live production and MSP environments, meaning they don't just follow support scripts. They truly understand how to independently solve tricky user and infrastructure issues.</p><p></p><p>Take a look at their resumes and interview notes below, and let me know who you’d like to chat with so I can get them on your calendar.</p>
+    </div>
+    <div class="editorial-divider"></div>
+  </section>
+
+  <section class="candidates-section">
+    <div class="candidates-header fade-in">
+      <h2>Candidate Profiles</h2>
+      <p>Each candidate has been carefully selected and evaluated for this role.</p>
+    </div>
+
+    <div class="batch-switcher" id="batch-switcher" data-count="1">
+      <button class="batch-btn active" onclick="showBatch(1)" data-batch="1">
+        <span>Batch 1</span>
+        <span class="batch-count">3</span>
+      </button>
+    </div>
+
+    <div id="batch-1" class="batch-panel">
+      <div class="candidates">
+        
+    <div class="candidate-card">
+      <div class="card featured" id="candidate-0">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar featured-avatar">NJ</div>
+            <div>
+              <div class="card-name">Neil J.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Philippines &middot; 14 yrs MSP/NOC
+              </div>
+              <div class="card-badges">
+                
+                <span class="badge badge-shortlisted">Pre-Shortlisted</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$3,000/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Neil is the grounded pick in this batch. 14 years of pure MSP and NOC work, no detours into product or consulting. He knows tickets, he knows escalations, he knows the rhythm. Bring him in and the lights stay on.
+          </div>
+
+          
+          <div class="card-section-title">Experience Highlights</div>
+          <div class="experience-list">
+            
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Senior Systems Engineer</div>
+                <div class="exp-company">iScale Solutions Inc. &middot; 2019-2026</div>
+                <div class="exp-highlight">Attended to end-users and clients IT requests to fulfill their daily IT inquiries, projects and Infrastructure changes. We also manage their IT infrastructure by providing real-time support on their platforms like Networks, Servers, Machines and Devices, Backups, Cloud Solutions and Security.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Senior Systems Engineer</div>
+                <div class="exp-company">IGT Solutions Inc. &middot; 2016-2019</div>
+                <div class="exp-highlight">I was part of the Infrastructure Support Group(ISG)</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Senior IT Support Administrator</div>
+                <div class="exp-company">Unisys Corp. &middot; 2014-2016</div>
+                <div class="exp-highlight">I served as an all-around IT for their Managed IT Services needs.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Senior IT Support Administrator</div>
+                <div class="exp-company">Magellan Solutions &middot; 2011-2014</div>
+                <div class="exp-highlight">Supporting AVTech clients with all-around IT needs.</div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Windows Server 2016/2019</span><span class="ctag ctag-key">Intune</span><span class="ctag ctag-key">Datto RMM</span><span class="ctag ctag-key">ConnectWise</span><span class="ctag ctag-key">Meraki</span>
+            <span class="ctag">Fortinet</span><span class="ctag">CCNA</span><span class="ctag">Veeam</span><span class="ctag">Active Directory</span><span class="ctag">PRTG</span>
+          </div>
+
+          
+          <div class="card-section-title">GIG SYSTEMS Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">ConnectWise + Datto RMM certified → GIG is an MSP; these are the exact ticketing and RMM tools MSPs run on</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Meraki, Fortinet, SonicWall, WatchGuard hands-on → GIG manages complex wireless and firewall environments for schools and businesses</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Veeam Backup certified + Datto RMM enterprise experience → GIG's datacenter and backup obligations need someone who has touched these tools in production</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Windows Server &amp; AD</div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">M365 &amp; Intune</div>
+              <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Network Troubleshooting</div>
+              <div class="bar-track"><div class="bar-fill" style="width:84%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">MSP Toolchain</div>
+              <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Backup &amp; Recovery</div>
+              <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:72%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://candidate-video.com/uploads/881bbcbe-9bff-4ba8-9844-620614babc5e" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Neil is the most MSP-native candidate in this batch, and that matters for GIG. iScale Solutions gave him 6+ years of daily client-facing infrastructure support: Windows Server 2016/2019, Intune, Datto, PRTG, Splunk, and firewall platforms including Meraki, Fortinet, and SonicWall. His interview showed solid, methodical troubleshooting: he talks through AD login failures, GP update issues, and Intune MDM compliance in clear steps, not scripts. He is ConnectWise and Datto RMM certified, which means the MSP toolchain GIG likely runs is not a learning curve for him. The honest trade-off: his interview English is functional but conversational, not polished. For a role that demands live client calls, GIG should run a short phone screen to pressure-test communication before extending an offer....</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="candidate-card">
+      <div class="card" id="candidate-1">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar">MM</div>
+            <div>
+              <div class="card-name">Moses M.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Kenya &middot; 10+ yrs IT Administration
+              </div>
+              <div class="card-badges">
+                
+                
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$3,000/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Moses is the adult in the room in this batch. He has managed IT across continents, not just cubicles. GIG needs someone who can own a complex environment independently. Moses has done exactly that, at scale, for years.
+          </div>
+
+          
+          <div class="card-section-title">Experience Highlights</div>
+          <div class="experience-list">
+            
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">IT Manager</div>
+                <div class="exp-company">BURN Manufacturing &middot; October 2019 - March 2026</div>
+                <div class="exp-highlight">Formulated and executed a comprehensive multi-national technology strategy and enterprise architecture that drove a successful enterprise-wide digital transformation journey across 10+ countries.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">ICT Systems &amp; Infrastructure Security Engineer /IT Manager</div>
+                <div class="exp-company">Uwezo Microfinance Bank &middot; November 2017 - September 2019</div>
+                <div class="exp-highlight">Directed an ambitious digital transformation programme, integrating multiple business systems and platforms utilizing microservices architecture and modern DevOps workflows to optimize delivery pipelines.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">IT Officer</div>
+                <div class="exp-company">Ukristo Na Ufanisi Sacco &middot; April 2016 - October 2017</div>
+                <div class="exp-highlight">Administered Windows Active Directory, Windows Server, and Microsoft 365 environments, strictly governing user accounts, license management, and access controls.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Consumer Channel Group Specialist (Office 365 and Cloud)</div>
+                <div class="exp-company">Microsoft &middot; February 2015 – December 2015</div>
+                <div class="exp-highlight">Collaboration Technologies: Provisioned technical consulting and architecture advice centered on Office 365 and Microsoft Cloud ecosystems, advising corporate clients on enterprise migration, user onboarding, and technical training.</div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Active Directory</span><span class="ctag ctag-key">M365</span><span class="ctag ctag-key">Veeam</span><span class="ctag ctag-key">FortiGate</span><span class="ctag ctag-key">VMware</span>
+            <span class="ctag">Hyper-V</span><span class="ctag">SD-WAN</span><span class="ctag">Jira</span><span class="ctag">ServiceNow</span><span class="ctag">PowerShell</span>
+          </div>
+
+          
+          <div class="card-section-title">GIG SYSTEMS Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">Managed IT infrastructure across 10+ countries at BURN Manufacturing → GIG's new enterprise contracts demand someone who can handle complexity without constant escalation</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Administered Veeam, FortiGate, VMware, and Hyper-V in live production → GIG's datacenter and MSP stack maps directly to tools Moses has already operated under pressure</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Two Microsoft program roles including Office 365 Cloud consulting → GIG's school and business clients run M365 environments; Moses has advised, deployed, and fixed them from the inside</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Active Directory</div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">M365 Admin</div>
+              <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Network Troubleshooting</div>
+              <div class="bar-track"><div class="bar-fill" style="width:83%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Veeam / Backup</div>
+              <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Enterprise Infrastructure</div>
+              <div class="bar-track"><div class="bar-fill" style="width:91%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://candidate-video.com/uploads/20ef3157-f138-4a22-bedd-5d92ff88292b" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Where Neil comes from pure MSP repetition and Dennis from product analysis, Moses brings something different: he has actually run IT as a function across messy, multi-country organizations with real stakes. Six-plus years as IT Manager at BURN Manufacturing, spanning 10+ countries, means he has diagnosed network failures, managed AD at enterprise scale, and kept VoIP and backup systems running without hand-holding. That is precisely the independent operator GIG needs for their new enterprise contracts. The honest trade-off: Moses is less MSP-specific than Neil, and his ticketing volume at scale is harder to quantify. But his ceiling is higher, and for a flat team where everyone wears multiple hats, his breadth is a genuine asset. He thinks like an owner. GIG will feel that difference...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="candidate-card">
+      <div class="card" id="candidate-2">
+        <div class="card-top">
+          <div class="card-identity">
+            <div class="card-avatar">DP</div>
+            <div>
+              <div class="card-name">Dennis P.</div>
+              <div class="card-location">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Philippines &middot; 25+ yrs IT Infrastructure
+              </div>
+              <div class="card-badges">
+                
+                
+              </div>
+            </div>
+          </div>
+          <div class="card-rate">
+            <div class="card-rate-amount">$3,000/mo</div>
+            <div class="card-rate-period">USD / Month</div>
+          </div>
+        </div>
+
+        <div class="card-body">
+          
+          <div class="card-narrative">
+            Dennis is the whole package in this batch. Two decades of stacking real infrastructure experience across MSPs, enterprise, and datacenter environments. He has seen the complexity GIG is heading into. He has already lived it.
+          </div>
+
+          
+          <div class="card-section-title">Experience Highlights</div>
+          <div class="experience-list">
+            
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">IT Infrastructure &amp; Systems Administrator(Freelance)</div>
+                <div class="exp-company">Freelance &middot; 08/2025 – Present</div>
+                <div class="exp-highlight">Designed and deployed complete IT infrastructure solutions for SMB clients, including domain registration, DNS configuration, business email setup, and Microsoft 365, Zoho and Google Workspace administration.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">IT Product Analyst(Remote)</div>
+                <div class="exp-company">Royal Caribbean Group – (CAI-STA Phils) &middot; 12/2022 – 08/2025 | Miramar Florida, USA</div>
+                <div class="exp-highlight">Partnered with Product Owners and engineering teams to translate business requirements into scalable, reliable platform solutions.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">IT Infrastructure Administrator (Remote)</div>
+                <div class="exp-company">Benco Dental - (Logiscale Inc.) &middot; 09/2019 – 12/2022 | Pittston PA, USA</div>
+                <div class="exp-highlight">Supported hybrid Active Directory and Azure AD identity environments.</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-col">
+                <div class="exp-dot"></div>
+                
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Senior IT Engineer</div>
+                <div class="exp-company">MOKA General Trading LLC &middot; 03/2013 – 03/2018 | Dubai, UAE</div>
+                <div class="exp-highlight">Served as IT Officer-in-Charge, owning the reliability and availability of business-critical platforms while ensuring alignment with ISO 9001:2015, ISO 14001:2015, and ISO 18001:2007 compliance requirements.</div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Platforms &amp; Tools</div>
+          <div class="tags-cluster">
+            <span class="ctag ctag-key">Azure AD</span><span class="ctag ctag-key">Intune</span><span class="ctag ctag-key">Veeam</span><span class="ctag ctag-key">VMware</span><span class="ctag ctag-key">Fortinet</span>
+            <span class="ctag">PowerShell</span><span class="ctag">Exchange Online</span><span class="ctag">Windows Server</span><span class="ctag">Active Directory</span><span class="ctag">VoIP</span>
+          </div>
+
+          
+          <div class="card-section-title">GIG SYSTEMS Fit Indicators</div>
+          <div class="fit-grid">
+            
+            <div class="fit-item">
+              <div class="fit-label">Veeam backup administration verified at Benco Dental → GIG's JD explicitly requires Veeam and backup troubleshooting skills</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">MSP client-facing engineer at INFOMEDIA Singapore with VoIP, DNS, DHCP, Windows Server → mirrors GIG's exact service delivery model for schools and businesses</div>
+            </div>
+            <div class="fit-item">
+              <div class="fit-label">Hybrid AD + Azure AD + Exchange Online for 300+ users at Benco Dental → GIG needs admins who own M365 environments without supervision</div>
+            </div>
+          </div>
+
+          
+          <div class="card-section-title">Strength Profile</div>
+          <div class="strength-bars">
+            
+            <div class="bar-item">
+              <div class="bar-label">Active Directory</div>
+              <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">M365 Admin</div>
+              <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Network Troubleshooting</div>
+              <div class="bar-track"><div class="bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Veeam &amp; Backup</div>
+              <div class="bar-track"><div class="bar-fill" style="width:82%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Windows Server</div>
+              <div class="bar-track"><div class="bar-fill" style="width:87%"></div></div>
+            </div>
+            <div class="bar-item">
+              <div class="bar-label">Client Communication</div>
+              <div class="bar-track"><div class="bar-fill" style="width:83%"></div></div>
+            </div>
+          </div>
+
+          <div class="card-actions">
+            <a class="video-intro-btn" href="https://candidate-video.com/uploads/9c2efa53-e9b7-4856-81a7-7cb95f87514f" target="_blank"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>Watch Intro Video</a>
+            
+            
+          </div>
+        </div>
+
+        
+        <div class="card-footer">
+          <div class="card-recruiter-note">
+            <div class="recruiter-note-title">Recruiter Note</div>
+            <p>Where Neil is pure MSP NOC and Moses is enterprise-scale IT management, Dennis sits at the intersection of both. He has MSP client-facing experience from INFOMEDIA Singapore, datacenter and large-scale infrastructure from First Advantage Philippines (800+ workstations, 10-person team), and modern hybrid Azure AD plus Veeam production work from Benco Dental. That range is rare. The honest trade-off: his deepest recent work at Royal Caribbean was more platform operations and product analysis than pure network admin. There is a slight pivot back happening with his current freelance work. He is recalibrating toward infrastructure. The trajectory is clear and the foundation underneath it is genuinely deep. For GIG's 24/7 obligation, Dennis brings the horsepower to handle complexity...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+      <div class="fade-in">
+        
+  <div class="comparison-section">
+    <div class="section-label" style="padding-bottom:20px;">
+      <h2>Side-by-Side Comparison</h2>
+      <p>Key criteria at a glance to help you prioritize interviews.</p>
+    </div>
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Criteria</th>
+            <th>Neil J.</th><th>Moses M.</th><th>Dennis P.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Location</strong></td><td>Philippines</td><td>Kenya</td><td>Philippines</td></tr>
+          <tr><td><strong>Experience</strong></td><td>14 yrs MSP/NOC</td><td>10+ yrs IT Administration</td><td>25+ yrs IT Infrastructure</td></tr>
+          <tr><td><strong>Key Employers</strong></td><td>iScale Solutions Inc., IGT Solutions Inc., Unisys Corp.</td><td>BURN Manufacturing, Uwezo Microfinance Bank, Ukristo Na Ufanisi Sacco</td><td>Freelance, Royal Caribbean Group – (CAI-STA Phils), Benco Dental - (Logiscale Inc.)</td></tr>
+          <tr><td><strong>Core Strength</strong></td><td>Windows Server 2016/2019, Intune, Datto RMM</td><td>Active Directory, M365, Veeam</td><td>Azure AD, Intune, Veeam</td></tr>
+          <tr><td><strong>HRIS / Tools</strong></td><td>Windows Server 2016/2019, Intune, Datto RMM, ConnectWise, Meraki</td><td>Active Directory, M365, Veeam, FortiGate, VMware</td><td>Azure AD, Intune, Veeam, VMware, Fortinet</td></tr>
+          <tr><td><strong>Languages</strong></td><td>English</td><td>English</td><td>English, Filipino</td></tr>
+          <tr><td><strong>Education</strong></td><td>B.S. Electronics &amp; Communications Engineering (Laguna State Polytechnic University)</td><td>Bachelor of Business and Information Technology (Africa Nazarene University)</td><td>Business System in Computer Programming (System Technology Institute (STI)); BS in Computer Science (Centro Escolar University)</td></tr>
+          <tr><td><strong>Rate</strong></td><td class="highlight-cell">$3,000/mo</td><td class="highlight-cell">$3,000/mo</td><td class="highlight-cell">$3,000/mo</td></tr>
+          
+        </tbody>
+      </table>
+    </div>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="advisor-section fade-in">
+    <div class="advisor-section-label">Your Talent Advisor</div>
+    <div class="advisor-card">
+      <img class="advisor-avatar" src="https://saganrecruitment.com/wp-content/uploads/2025/10/Amimo.jpg" alt="Amimo Chaka" />
+      <div class="advisor-info">
+        <div class="advisor-label">Sagan Talent Advisor</div>
+        <div class="advisor-name">Amimo Chaka</div>
+        <div class="advisor-role">Sagan · Recruitment Team — Talent Advisor</div>
+        <p class="advisor-summary">Amimo helps high-growth companies find and hire exceptional remote talent across Africa, Asia, and Latin America. She is your direct point of contact for scheduling interviews and coordinating next steps.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sagan-info">
+    <div class="sagan-info-inner">
+      <div class="sagan-stat">
+        <div class="sagan-stat-number">20,000+</div>
+        <div class="sagan-stat-label">Applications / month</div>
+      </div>
+      <div class="sagan-stat">
+        <div class="sagan-stat-number">2,000+</div>
+        <div class="sagan-stat-label">Placements made</div>
+      </div>
+      <div class="sagan-stat">
+        <div class="sagan-stat-number">30+</div>
+        <div class="sagan-stat-label">Countries</div>
+      </div>
+    </div>
+  </div>
+
+  <section class="footer-cta fade-in">
+    <h2>Ready to <strong>meet your next IT Systems Administrator?</strong></h2>
+    <p>Tell us who you want to interview and we'll set it up within 24 hours.</p>
+    <a class="footer-contact" href="mailto:jesus.p@getsagan.com">Schedule Next Steps</a>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-logos">
+      <img src="https://static.parastorage.com/client/pfavico.ico" alt="GIG SYSTEMS" style="height:22px;" onerror="this.style.display='none'" />
+      <span class="footer-x">&times;</span>
+      <img src="https://saganrecruitment.com/wp-content/uploads/2025/10/Sagan-Logo-2-e1759568299542.png" alt="Sagan" />
+    </div>
+    <p>Prepared by <a href="https://getsagan.com" target="_blank">Sagan</a> for GIG SYSTEMS &middot; IT Systems Administrator Search &middot; June 24, 2026</p>
+  </footer>
+
+  <script>
+    function showBatch(n) {
+      document.querySelectorAll('.batch-panel').forEach(p => p.classList.add('hidden'));
+      document.querySelectorAll('.batch-btn').forEach(b => b.classList.remove('active'));
+      var panel = document.getElementById('batch-' + n);
+      var btn = document.querySelector('[data-batch="' + n + '"]');
+      if (panel) panel.classList.remove('hidden');
+      if (btn) btn.classList.add('active');
+    }
+
+    /* Scroll animations */
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+      /* Animate candidate cards */
+      document.querySelectorAll('.candidate-card').forEach(function(el) {
+        el.classList.add('fade-in');
+        observer.observe(el);
+      });
+
+      /* Animate strength bars on scroll */
+      var barObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var fills = entry.target.querySelectorAll('.bar-fill');
+            fills.forEach(function(fill) {
+              var w = fill.style.width;
+              fill.style.width = '0%';
+              setTimeout(function() { fill.style.width = w; }, 100);
+            });
+            barObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      document.querySelectorAll('.strength-bars').forEach(function(el) { barObserver.observe(el); });
+    })();
+  </script>
+</body>
+</html>
